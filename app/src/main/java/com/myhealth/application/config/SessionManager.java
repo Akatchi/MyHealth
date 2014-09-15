@@ -67,7 +67,7 @@ public class SessionManager
     }
 
     //Haal de keys op om in de app weer te geven of om te kijken wat er op het huidige moment instaat
-    public String getName() 		{ return pref.getString(USERNAME, null); }
+    public String getUsername() 	{ return pref.getString(USERNAME, null); }
     public boolean isLoggedIn()		{ return pref.getBoolean(IS_LOGIN, false); 	}
 
 

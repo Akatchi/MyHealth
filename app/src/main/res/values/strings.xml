@@ -10,6 +10,8 @@
 
     <!-- activity names -->
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_bluetooth">Actieve bluetooth apparaten</string>
 
     <!-- edit text hints -->
     <string name="field_emailaddress">Email address</string>
@@ -17,7 +19,16 @@
 
     <!-- button values -->
     <string name="button_login">Login</string>
-    <string name="title_activity_settings">SettingsActivity</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="button_save">Opslaan</string>
+
+    <!-- language strings voor de spinner -->
+    <string name="Nederlands">Nederlands</string>
+    <string name="Engels">English</string>
+
+    <!-- settings language spinner -->
+    <string-array name="language_array">
+        <item>@string/Nederlands</item>
+        <item>@string/Engels</item>
+    </string-array>
 
 </resources>

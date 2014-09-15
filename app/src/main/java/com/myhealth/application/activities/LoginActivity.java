@@ -40,8 +40,8 @@ public class LoginActivity extends Activity
 
         //Kijk of de ingevulde velden geldig zijn ingevuld zoniet geef een error message weer
         String errorMessage = "";
-        if( username.equals("") )       { errorMessage += "Please enter your username /n"; }
-        if( password.equals("") )       { errorMessage += "Please enter your password /n"; }
+        if( username.equals("") )       { errorMessage += "Please enter your username \n"; }
+        if( password.equals("") )       { errorMessage += "Please enter your password \n"; }
         if( !errorMessage.equals("") )  { Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show(); }
         //Voor tijdelijke test pruprose is er een hardcoded account Test, Test die de user in het systeem moet inloggen
         else if( username.equals("test") && password.equals("test") )
