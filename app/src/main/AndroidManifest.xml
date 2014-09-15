@@ -3,6 +3,7 @@
     package="com.myhealth.application" >
 
     <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -11,7 +12,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".activities.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +21,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.MainActivity"
-            android:label="@string/app_name" />
+            android:name=".activities.LoginActivity"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.NoTitleBar"/>
         <activity
             android:name=".activities.SettingsActivity"
             android:label="@string/title_activity_settings" >

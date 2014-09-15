@@ -7,14 +7,14 @@
         android:title="@string/action_settings"
         android:icon="@drawable/ic_action_settings"
         android:orderInCategory="100"
-        android:showAsAction="never" />
+        android:showAsAction="always" />
 
     <item
         android:id="@+id/action_search_bluetooth"
         android:title="@string/action_bluetooth"
         android:icon="@drawable/ic_action_bluetooth_searching"
         android:orderInCategory="150"
-        android:showAsAction="never" />
+        android:showAsAction="always" />
 
 
 </menu>

@@ -70,10 +70,6 @@ public class LoginActivity extends Activity
         }
     }
 
-    /**
-     *
-     * @param username
-     */
     private void loginUser(String username)
     {
         //Sla de ingelogde username op in de sessionmanager en zet de logged in status op true
