@@ -1,11 +1,21 @@
 package com.myhealth.application.config;
 
 /**
+ * Variables stores the various variables for the application.
  * Created by Akatchi on 12-9-2014.
  */
 public class Variables
 {
+    /**
+     * Login URL for the application to log the user in.
+     */
     public static final String LOGINURL     = "www.ikwilinloggen.nl/now";
-    public static final String UUID         = "4b588820-3cc3-11e4-916c-0800200c9a66";
-    public static final int    CODE_SUCCESS = 1;
+
+    /**
+     * various codes for the application.
+     */
+    public static final int     CODE_SUCCESS = 200;
+    public static final int     CODE_VALIDATION_ERROR = 400;
+    public static final int     CODE_INTERNAL_SERVER_ERROR = 500;
+
 }

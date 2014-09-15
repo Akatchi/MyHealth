@@ -18,18 +18,31 @@ public class SessionManager
 
     private int PRIVATE_MODE = 0;
 
+    /**
+     * The keys for the shared preferences array
+     */
     private static final String PREF_NAME = "MyHealth";
-    //Keys die in de sessie worden opgeslagen
     private static final String IS_LOGIN  = "IsLoggedIn";
     private static final String USERNAME  = "Username";
 
+    /**
+     * The constructor for the session manager,
+     * Initializes the shared preferences.
+     * @param context
+     */
     public SessionManager(Context context)
     {
         this._context   = context;
         pref            = _context.getSharedPreferences(PREF_NAME, PRIVATE_MODE);
     }
 
-    //Maak een login sessie aan met de ingevulde username
+    /**
+     * createLoginSession, Sets the proper boolean for the logged in user.
+     * Also puts the username into the SharedPreferences. And commits it
+     *
+     * @param name
+     * @return void
+     */
     public void createLoginSession(String name)
     {
         editor = pref.edit();
@@ -38,7 +51,11 @@ public class SessionManager
         editor.commit();
     }
 
-    //Kijk of de user ingelogd is, zoniet stuur hem terug naar de login pagina
+    /**
+     * See if the user is logged in,
+     * if not redirect back to login.
+     * @return void
+     */
     public void checkLogin()
     {
         if(!this.isLoggedIn())
@@ -51,8 +68,11 @@ public class SessionManager
 
     }
 
-    //Log de user uit, verwijder de username + login boolean zodat er opnieuw ingelogd kan worden
-    //Nadat de login gegevens verwijdert zijn, wordt de user teruggestuurd naar de login activity
+    /**
+     * logoutUser, logs the user out, and deletes the username and the login boolean
+     * so the user may log in again.
+     * When username and boolean is deleted, redirect back to the login activity
+     */
     public void logoutUser()
     {
         editor = pref.edit();
@@ -66,8 +86,16 @@ public class SessionManager
         _context.startActivity(i);
     }
 
-    //Haal de keys op om in de app weer te geven of om te kijken wat er op het huidige moment instaat
-    public String getUsername() 	{ return pref.getString(USERNAME, null); }
+    /**
+     * getName, gets the username from the shared preferences.
+     * @return String username
+     */
+    public String getName() 		{ return pref.getString(USERNAME, null); }
+
+    /**
+     * isLoggedIn, gets the log in boolean for the user.
+     * @return boolean is_login
+     */
     public boolean isLoggedIn()		{ return pref.getBoolean(IS_LOGIN, false); 	}
 
 
