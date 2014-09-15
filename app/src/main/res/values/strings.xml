@@ -31,4 +31,11 @@
         <item>@string/Engels</item>
     </string-array>
 
+    <!-- Drawer values -->
+    <string-array name="drawer_values">
+        <item name="eerste_item">dasfddsa</item>
+        <item name="tweede_item">Hofsdafdsafi</item>
+        <item name="derder_item">asdf</item>
+    </string-array>
+
 </resources>
