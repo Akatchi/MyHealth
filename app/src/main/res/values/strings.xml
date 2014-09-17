@@ -33,12 +33,9 @@
 
     <!-- Drawer values -->
     <string-array name="drawer_values">
-        <item name="eerste_item">Urine test</item>
-        <item name="tweede_item">Bloed test</item>
-        <item name="derder_item">Nog een test</item>
+        <item name="eerste_item">dasfddsa</item>
+        <item name="tweede_item">Hofsdafdsafi</item>
+        <item name="derder_item">asdf</item>
     </string-array>
-
-    <string name="title_activity_urine">UrineActivity</string>
-    <string name="hello_world">Hello world!</string>
 
 </resources>
