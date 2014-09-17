@@ -12,6 +12,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_settings">SettingsActivity</string>
     <string name="title_activity_bluetooth">Actieve bluetooth apparaten</string>
+    <string name="title_activity_urine">Urine onderzoek</string>
 
     <!-- edit text hints -->
     <string name="field_emailaddress">Email address</string>
@@ -31,11 +32,16 @@
         <item>@string/Engels</item>
     </string-array>
 
+    <!-- Drawer item names -->
+    <string name="test_urine">Urine test</string>
+    <string name="test_bloed">Bloed test</string>
+    <string name="test_gck">GCK test</string>
+
     <!-- Drawer values -->
     <string-array name="drawer_values">
-        <item name="eerste_item">dasfddsa</item>
-        <item name="tweede_item">Hofsdafdsafi</item>
-        <item name="derder_item">asdf</item>
+        <item>@string/test_urine</item>
+        <item>@string/test_bloed</item>
+        <item>@string/test_gck</item>
     </string-array>
 
 </resources>
