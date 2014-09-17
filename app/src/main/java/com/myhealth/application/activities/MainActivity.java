@@ -65,9 +65,9 @@ public class MainActivity extends Activity
             }
 
         });
-
+        // the drawer toggle
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-                R.drawable.ic_drawer,R.string.field_emailaddress, R.string.app_name) {
+                R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close) {
 
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
@@ -80,15 +80,15 @@ public class MainActivity extends Activity
             public void onDrawerOpened(View drawerView)
             {
                 super.onDrawerOpened(drawerView);
-//                getActionBar().setTitle("hoi");
                 invalidateOptionsMenu(); // creates call to onPrepareOptionsMenu()
             }
         };
 
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-//        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
-//        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+
+        getActionBar().setHomeButtonEnabled(true);
+
     }
 
     //Hier wordt de menu balk geiniteerd
@@ -104,6 +104,12 @@ public class MainActivity extends Activity
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
+        // Pass the event to ActionBarDrawerToggle, if it returns
+        // true, then it has handled the app icon touch event
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
         switch( item.getItemId() )
         {
             case R.id.action_settings:

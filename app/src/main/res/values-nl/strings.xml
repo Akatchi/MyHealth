@@ -5,24 +5,27 @@
     <string name="app_name">MyHealth</string>
 
     <!-- menu bar item names -->
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Instellingen</string>
     <string name="action_bluetooth">Bluetooth</string>
 
     <!-- activity names -->
-    <string name="title_activity_login">LoginActivity</string>
-    <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_login">Login</string>
+    <string name="title_activity_settings">Instellingen</string>
     <string name="title_activity_bluetooth">Actieve bluetooth apparaten</string>
     <string name="title_activity_urine">Urine onderzoek</string>
 
     <!-- edit text hints -->
-    <string name="field_emailaddress">Email address</string>
+    <string name="field_emailaddress">Email</string>
     <string name="field_password">Password</string>
+    <string name="field_first_name">Voornaam</string>
+    <string name="field_last_name">Achternaam</string>
 
     <!-- button values -->
     <string name="button_login">Login</string>
     <string name="button_save">Opslaan</string>
 
     <!-- language strings voor de spinner -->
+    <string name="language">Taal</string>
     <string name="Nederlands">Nederlands</string>
     <string name="Engels">English</string>
 
@@ -33,9 +36,11 @@
     </string-array>
 
     <!-- Drawer item names -->
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Sluiten</string>
     <string name="test_urine">Urine test</string>
-    <string name="test_bloed">Bloed test</string>
-    <string name="test_gck">GCK test</string>
+    <string name="test_bloed">Bloeddruk</string>
+    <string name="test_gck">ECG</string>
 
     <!-- Drawer values -->
     <string-array name="drawer_values">
@@ -43,5 +48,6 @@
         <item>@string/test_bloed</item>
         <item>@string/test_gck</item>
     </string-array>
+
 
 </resources>
