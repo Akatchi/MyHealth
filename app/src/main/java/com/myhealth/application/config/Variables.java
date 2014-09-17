@@ -17,5 +17,5 @@ public class Variables
     public static final int     CODE_SUCCESS = 200;
     public static final int     CODE_VALIDATION_ERROR = 400;
     public static final int     CODE_INTERNAL_SERVER_ERROR = 500;
-    public static final String  UUID = "0f090980-3d86-11e4-916c-0800200c9a66";
+    public static final String  UUID = "ac43a820-3cc0-11e4-916c-0800200c9a66";
 }
