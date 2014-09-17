@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.myhealth.application.activities.UrineActivity">
+
+    <ImageView
+            android:id="@+id/image_urine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:minHeight="128dp"
+            android:minWidth="128dp"
+            android:maxWidth="128dp"
+            android:maxHeight="128dp" android:src="@drawable/ic_launcher"/>
+
+</RelativeLayout>

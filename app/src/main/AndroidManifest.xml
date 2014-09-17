@@ -5,6 +5,9 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
 
     <application
         android:allowBackup="true"
@@ -31,6 +34,10 @@
         <activity
             android:name=".activities.BluetoothActivity"
             android:label="@string/title_activity_bluetooth" >
+        </activity>
+        <activity
+            android:name=".activities.UrineActivity"
+            android:label="@string/title_activity_urine" >
         </activity>
     </application>
 

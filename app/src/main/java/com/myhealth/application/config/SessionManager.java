@@ -90,7 +90,7 @@ public class SessionManager
      * getName, gets the username from the shared preferences.
      * @return String username
      */
-    public String getName() 		{ return pref.getString(USERNAME, null); }
+    public String getUsername() 		{ return pref.getString(USERNAME, null); }
 
     /**
      * isLoggedIn, gets the log in boolean for the user.
