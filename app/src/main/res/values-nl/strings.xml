@@ -19,10 +19,21 @@
     <string name="field_password">Password</string>
     <string name="field_first_name">Voornaam</string>
     <string name="field_last_name">Achternaam</string>
+	<string name="field_klachten">Vul hier uw klachten in als u die heeft, dit veld is niet verplicht.</string>
+
+    <!-- text view values -->
+    <string name="field_scanUrinePhoto">Klik op de camera hieronder om een foto van het urine strookje te maken.</string>
+    <string name="field_scanQRCode">Klik op de camera hieronder om een foto van de QR code op het strookje te maken.</string>
+	<string name="field_drInformatie">Informatie van uw persoonlijke doctor:</string>
+	<string name="field_drNaam">Naam:</string>
+	<string name="field_drKliniek">Kliniek:</string>
+	<string name="field_drTelnr">Tel nr:</string>
+	<string name="field_drEmail">Email:</string>
 
     <!-- button values -->
     <string name="button_login">Login</string>
     <string name="button_save">Opslaan</string>
+	<string name="button_send">Versturen</string>
 
     <!-- language strings voor de spinner -->
     <string name="language">Taal</string>

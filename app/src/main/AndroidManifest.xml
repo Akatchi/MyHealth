@@ -37,6 +37,7 @@
         </activity>
         <activity
             android:name=".activities.UrineActivity"
+			android:windowSoftInputMode="stateHidden"
             android:label="@string/title_activity_urine" >
         </activity>
     </application>

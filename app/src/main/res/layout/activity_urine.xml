@@ -1,25 +1,163 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+	xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.myhealth.application.activities.UrineActivity">
 
-    <ImageView
-            android:id="@+id/image_urine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:minHeight="128dp"
-            android:minWidth="128dp"
-            android:maxWidth="128dp"
-            android:maxHeight="128dp" android:src="@drawable/ic_launcher"/>
+	<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent">
 
-    <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="New Text"
-            android:layout_alignParentTop="true" android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"/>
 
-</RelativeLayout>
+		<TextView
+				android:id="@+id/scanUrinePhoto"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/field_scanUrinePhoto"
+				android:layout_marginLeft="5dp"/>
+
+		<ImageView
+				android:id="@+id/image_urine"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/scanUrinePhoto"
+				android:layout_centerHorizontal="true"
+				android:layout_margin="5dp"
+				android:minHeight="128dp"
+				android:minWidth="128dp"
+				android:maxWidth="128dp"
+				android:maxHeight="128dp"
+				android:src="@drawable/ic_action_camera"/>
+
+		<TextView
+				android:id="@+id/textView2"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/field_scanQRCode"
+				android:layout_below="@+id/image_urine" />
+
+		<ImageView
+				android:id="@+id/scanQRCode"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_below="@+id/textView2"
+				android:layout_centerHorizontal="true"
+				android:maxHeight="128dp"
+				android:maxWidth="128dp"
+				android:minHeight="128dp"
+				android:minWidth="128dp"
+				android:src="@drawable/ic_action_camera"/>
+
+		<TextView
+				android:id="@+id/textView3"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:text="@string/field_drInformatie"
+				android:layout_below="@+id/scanQRCode"
+				android:layout_alignLeft="@+id/scanUrinePhoto"
+				android:layout_alignStart="@+id/scanUrinePhoto"/>
+
+		<TextView
+				android:id="@+id/textView4"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/field_drNaam"
+				android:layout_marginLeft="10dp"
+				android:layout_marginTop="10dp"
+				android:layout_below="@+id/textView3"
+				android:layout_alignLeft="@+id/textView3"/>
+
+		<EditText
+				android:id="@+id/doctorName"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="John Doe"
+				android:ems="10"
+				android:enabled="false"
+				android:layout_below="@+id/textView3"
+				android:layout_toRightOf="@+id/textView4"/>
+
+		<TextView
+				android:id="@+id/textView5"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/field_drKliniek"
+				android:layout_marginTop="10dp"
+				android:layout_below="@+id/doctorName"
+				android:layout_alignLeft="@+id/textView4"/>
+
+		<EditText
+				android:id="@+id/doctorKliniek"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="UMCG"
+				android:ems="10"
+				android:enabled="false"
+				android:layout_below="@+id/doctorName"
+				android:layout_alignLeft="@+id/doctorName"/>
+
+		<TextView
+				android:id="@+id/textView6"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/field_drTelnr"
+				android:layout_marginTop="10dp"
+				android:layout_below="@+id/doctorKliniek"
+				android:layout_alignLeft="@+id/textView4"/>
+
+		<EditText
+				android:id="@+id/doctorTelnr"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="06-12345678"
+				android:ems="10"
+				android:enabled="false"
+				android:layout_below="@+id/doctorKliniek"
+				android:layout_alignLeft="@+id/doctorName"/>
+
+		<TextView
+				android:id="@+id/textView7"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/field_drEmail"
+				android:layout_marginTop="10dp"
+				android:layout_below="@+id/doctorTelnr"
+				android:layout_alignLeft="@+id/textView4"/>
+
+		<EditText
+				android:id="@+id/doctorEmail"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="JohnDoe@umcg.nl"
+				android:ems="10"
+				android:enabled="false"
+				android:layout_below="@+id/doctorTelnr"
+				android:layout_alignLeft="@+id/doctorName"/>
+
+		<EditText
+				android:id="@+id/textKlachten"
+				android:hint="@string/field_klachten"
+				android:inputType="textMultiLine"
+				android:lines="8"
+				android:minLines="6"
+				android:gravity="top|left"
+				android:maxLines="10"
+				android:layout_height="wrap_content"
+				android:layout_width="fill_parent"
+				android:scrollbars="vertical"
+				android:layout_below="@id/doctorEmail"/>
+
+		<Button
+				android:id="@+id/sendUrineTest"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="@string/button_send"
+				android:layout_below="@id/textKlachten"
+				android:layout_alignLeft="@+id/scanUrinePhoto"
+				android:onClick="sendUrineTest"/>
+
+	</RelativeLayout>
+
+</ScrollView>

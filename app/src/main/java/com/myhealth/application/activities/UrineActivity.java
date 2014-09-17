@@ -63,11 +63,22 @@ public class UrineActivity extends Activity
         }
     }
 
-    private boolean analyzePhoto()
+    private String analyzePhoto()
     {
-        boolean healthy = false;
+        //Todo: Test result bereken / randomen
 
-        return healthy;
+        return "Positive result -> geen test sturen";
+    }
+
+    public void sendUrineTest(View v)
+    {
+        //Todo:
+        //Haal het doctor id op
+        //Haal de user id op
+        //Haal het resultaat van de test op
+        //Haal de urine foto op
+        //Haal de klachten op als die er zijn
+        //Stuur de test door naar de webserver
     }
 
     private File createImageFile() throws IOException

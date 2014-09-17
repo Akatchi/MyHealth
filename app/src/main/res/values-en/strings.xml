@@ -19,10 +19,21 @@
     <string name="field_password">Password</string>
     <string name="field_first_name">First name</string>
     <string name="field_last_name">Last name</string>
+	<string name="field_klachten">Please inform us about the complaints you have, this field is not required.</string>
+
+    <!-- text view values -->
+    <string name="field_scanUrinePhoto">Click on the camera below to make a picture from the urine strip.</string>
+    <string name="field_scanQRCode">Click on the image below to make a picture from the QR code on the urine strip.</string>
+	<string name="field_drInformatie">Information about your personal doctor:</string>
+	<string name="field_drNaam">Name:</string>
+	<string name="field_drKliniek">Clinic:</string>
+	<string name="field_drTelnr">Phone:</string>
+	<string name="field_drEmail">Email:</string>
 
     <!-- button values -->
     <string name="button_login">Login</string>
     <string name="button_save">Save</string>
+	<string name="button_send">Send</string>
 
     <!-- language strings voor de spinner -->
     <string name="language">Language</string>
