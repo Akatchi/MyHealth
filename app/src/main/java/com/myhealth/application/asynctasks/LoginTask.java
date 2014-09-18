@@ -2,7 +2,6 @@ package com.myhealth.application.asynctasks;
 
 import android.os.AsyncTask;
 import android.util.Log;
-
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -40,6 +39,7 @@ public class LoginTask extends AsyncTask<String, String, ResponseObject>
         String message = "";
         int    code    = 0;
 
+        Log.d("json", json.toString());
         try
         {
             //Haal de message en code op van de JSON return page

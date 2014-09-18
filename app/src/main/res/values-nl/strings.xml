@@ -52,13 +52,19 @@
     <string name="test_urine">Urine test</string>
     <string name="test_bloed">Bloeddruk</string>
     <string name="test_gck">ECG</string>
+	<string name="messages">Berichten</string>
 
     <!-- Drawer values -->
     <string-array name="drawer_values">
         <item>@string/test_urine</item>
         <item>@string/test_bloed</item>
         <item>@string/test_gck</item>
+		<item>@string/messages</item>
     </string-array>
+
+	<!-- Test result string -->
+	<string name="negatief_resultaat">Het resultaat was negatief, vul de onderstaande velden in om contact met uw doctor te maken.</string>
+	<string name="positief_resultaat">Het resultaat was positief, u kunt hier weggaan door de knop linksbovenin in te drukken.</string>
 
 
 </resources>

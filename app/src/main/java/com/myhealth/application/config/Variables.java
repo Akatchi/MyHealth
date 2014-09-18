@@ -9,7 +9,8 @@ public class Variables
     /**
      * Login URL for the application to log the user in.
      */
-    public static final String LOGINURL     = "www.ikwilinloggen.nl/now";
+    public static final String LOGINURL             = "http://www.shadow-realm.nl/login.asmx?op=authenticate";
+    public static final String URINEPHOTOUPLOADURL  = "www.savemyurine.com/uploads";
 
     /**
      * various codes for the application.
