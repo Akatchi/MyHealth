@@ -272,6 +272,7 @@ public class BluetoothActivity extends Activity
 //                        System.out.print(c);
                     String test = new String(buffer);
                         Log.d("incomming", test);
+                    Toast.makeText(getApplicationContext(), test, Toast.LENGTH_SHORT).show();
                 } catch (IOException e) {
                     break;
                 }
