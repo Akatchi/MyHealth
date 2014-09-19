@@ -30,7 +30,7 @@ public class LoginTask extends AsyncTask<String, String, ResponseObject>
     {
         //Vul de parameters die doorgestuurd moeten worden naar de json pagina
         List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("username", username));
+            params.add(new BasicNameValuePair("email", username));
             params.add(new BasicNameValuePair("password", password));
 
         //Haal het json object op
@@ -44,7 +44,7 @@ public class LoginTask extends AsyncTask<String, String, ResponseObject>
         {
             //Haal de message en code op van de JSON return page
             message = json.getString("message");
-            code    = json.getInt("code");
+            code    = json.getInt("success");
 
             //Todo: user gegevens nog ophalen in JSON en die opslaan zodat je weet wie er ingelogd is
         }

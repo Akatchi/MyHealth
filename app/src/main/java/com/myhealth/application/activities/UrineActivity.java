@@ -168,6 +168,8 @@ public class UrineActivity extends Activity
             //QR Code gevonden vul nu de data van de huisarts in in de velden
             String contents = data.getStringExtra("SCAN_RESULT");
             Log.d("Content", contents);
+
+            Toast.makeText(getApplicationContext(), contents, Toast.LENGTH_SHORT).show();
         }
     }
 
