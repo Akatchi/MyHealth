@@ -1,5 +1,6 @@
 package com.myhealth.application.activities;
 
+
 import android.app.ActionBar;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
@@ -246,19 +247,31 @@ public class BluetoothActivity extends Activity
         }
 
         public void run() {
-            byte[] buffer = new byte[1024];  // buffer store for the stream
+            long length = 0;
+            try {
+                length = mmInStream.available();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            byte[] buffer = new byte[(int) length];  // buffer store for the stream
             int bytes; // bytes returned from read()
             Log.e("BEGIN LOG", "INCOMMING");
             // Keep listening to the InputStream until an exception occurs
             while (true) {
                 try {
+
                     // Read from the InputStream
                     bytes = mmInStream.read(buffer);
                     // Send the obtained bytes to the UI activity
                     mHandler.obtainMessage(1, bytes, -1, buffer)
                             .sendToTarget();
-                    Log.d("incomming", Integer.toString(bytes));
 
+
+
+                        // prints character
+//                        System.out.print(c);
+                    String test = new String(buffer);
+                        Log.d("incomming", test);
                 } catch (IOException e) {
                     break;
                 }
