@@ -43,11 +43,6 @@ public class LoginActivity extends Activity
         if( username.equals("") )       { errorMessage += "Please enter your username \n"; }
         if( password.equals("") )       { errorMessage += "Please enter your password \n"; }
         if( !errorMessage.equals("") )  { Toast.makeText(getApplicationContext(), errorMessage, Toast.LENGTH_SHORT).show(); }
-        //Voor tijdelijke test pruprose is er een hardcoded account Test, Test die de user in het systeem moet inloggen
-        else if( username.equals("test") && password.equals("test") )
-        {
-            loginUser(username);
-        }
         else //Als er dus geen error gevonden is
         {
             try
@@ -57,23 +52,29 @@ public class LoginActivity extends Activity
                 ResponseObject response = new LoginTask(username, password).execute(new String[]{Variables.LOGINURL}).get();
 
                 //Tot slot wordt er een message weergegeven wat de response van de server was ( bv. login gegevens ongeldig / login succesvol )
-                Toast.makeText(getApplicationContext(), response.getMessage(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getApplicationContext(), response.getMessage(), Toast.LENGTH_SHORT).show();
 
                 //Als de return code success is start dan een intent die de MainActivity opent
                 if( response.getCode() == Variables.CODE_SUCCESS )
                 {
                     //Roep de methode login user aan die het opstarten van de mainactivity en het opslaan van de logged in state afhandelt
-                    loginUser(username);
+                    Toast.makeText(getApplicationContext(), R.string.login_success, Toast.LENGTH_SHORT).show();
+                    loginUser(username, response.getToken());
+                }
+                else
+                {
+                    //Todo: Handel verkeerde credentials af
+                    Toast.makeText(getApplicationContext(), "sss", Toast.LENGTH_SHORT).show();
                 }
             }
             catch(Exception e){ e.printStackTrace(); }
         }
     }
 
-    private void loginUser(String username)
+    private void loginUser(String username, String token)
     {
         //Sla de ingelogde username op in de sessionmanager en zet de logged in status op true
-        session.createLoginSession(username);
+        session.createLoginSession(username, token);
 
         //Start een intent naar de main activity
         Intent i = new Intent(this, MainActivity.class);

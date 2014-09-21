@@ -2,6 +2,7 @@ package com.myhealth.application.asynctasks;
 
 import android.os.AsyncTask;
 import android.util.Log;
+
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
@@ -30,28 +31,30 @@ public class LoginTask extends AsyncTask<String, String, ResponseObject>
     {
         //Vul de parameters die doorgestuurd moeten worden naar de json pagina
         List<NameValuePair> params = new ArrayList<NameValuePair>();
-            params.add(new BasicNameValuePair("email", username));
+            params.add(new BasicNameValuePair("username", username));
             params.add(new BasicNameValuePair("password", password));
 
         //Haal het json object op
-        JSONObject json = jsonParser.makeHttpRequest(urls[0],"POST", params);
+        JSONObject json = jsonParser.makeHttpRequest(urls[0],"GET", params);
 
         String message = "";
+        String token   = "";
         int    code    = 0;
 
-        Log.d("json", json.toString());
         try
         {
+            Log.d("json", json.getString("status") + ":: " + json.toString());
             //Haal de message en code op van de JSON return page
-            message = json.getString("message");
-            code    = json.getInt("success");
+            message = json.getString("devmessage");
+            code    = json.getInt("status");
+            token   = json.getString("result");
 
             //Todo: user gegevens nog ophalen in JSON en die opslaan zodat je weet wie er ingelogd is
         }
         catch (JSONException e) 	{ e.printStackTrace(); }
 
         //Zet de opgehaalde message en code in een ResponseObject om die te returnen
-        ResponseObject response = new ResponseObject(message, code);
+        ResponseObject response = new ResponseObject(message, token, code);
 
         return response;
     }

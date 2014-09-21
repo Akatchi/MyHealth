@@ -24,6 +24,7 @@ public class SessionManager
     private static final String PREF_NAME = "MyHealth";
     private static final String IS_LOGIN  = "IsLoggedIn";
     private static final String USERNAME  = "Username";
+    private static final String TOKEN     = "Token";
 
     /**
      * The constructor for the session manager,
@@ -43,11 +44,12 @@ public class SessionManager
      * @param name
      * @return void
      */
-    public void createLoginSession(String name)
+    public void createLoginSession(String name, String token)
     {
         editor = pref.edit();
         editor.putBoolean(IS_LOGIN, true);
         editor.putString(USERNAME, name);
+        editor.putString(TOKEN, token);
         editor.commit();
     }
 
@@ -78,6 +80,7 @@ public class SessionManager
         editor = pref.edit();
         editor.remove(USERNAME);
         editor.remove(IS_LOGIN);
+        editor.remove(TOKEN);
         editor.commit();
 
         Intent i = new Intent(_context, LoginActivity.class);
@@ -91,6 +94,7 @@ public class SessionManager
      * @return String username
      */
     public String getUsername() 		{ return pref.getString(USERNAME, null); }
+    public String getToken()            { return pref.getString(TOKEN, null); }
 
     /**
      * isLoggedIn, gets the log in boolean for the user.

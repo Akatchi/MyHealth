@@ -5,9 +5,10 @@
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-feature android:name="android.hardware.camera" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-feature android:name="android.hardware.camera" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -37,8 +38,16 @@
         </activity>
         <activity
             android:name=".activities.UrineActivity"
-			android:windowSoftInputMode="stateHidden"
-            android:label="@string/title_activity_urine" >
+            android:label="@string/title_activity_urine"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name=".activities.BloedActivity"
+            android:label="@string/title_activity_bloed" >
+        </activity>
+        <activity
+            android:name=".activities.ECGActivity"
+            android:label="@string/title_activity_ecg" >
         </activity>
     </application>
 

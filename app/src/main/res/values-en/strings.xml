@@ -13,6 +13,8 @@
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_bluetooth">Active bluetooth devices</string>
     <string name="title_activity_urine">Urine test</string>
+    <string name="title_activity_ecg">ECGActivity</string>
+    <string name="title_activity_bloed">BloedActivity</string>
 
     <!-- edit text hints -->
     <string name="field_emailaddress">Email</string>
@@ -59,12 +61,14 @@
         <item>@string/test_urine</item>
         <item>@string/test_bloed</item>
         <item>@string/test_ecg</item>
-		<item>@string/messages</item>
     </string-array>
 
 	<!-- Test result string -->
 	<string name="negatief_resultaat">The result was negative, fill in the form below to contact your doctor.</string>
 	<string name="positief_resultaat">The result was positive, you can go back to the previous page by clicking the button in the top left corner.</string>
+
+    <!-- Toast Messages -->
+    <string name="login_success">You succesfully logged in</string>
 
 
 

@@ -56,11 +56,13 @@ public class MainActivity extends Activity
                 }
                 else if( selectedItem.equals(getResources().getString(R.string.test_bloed)) )
                 {
-
+                    Intent intentBloed = new Intent(getApplicationContext(), BloedActivity.class);
+                    startActivity(intentBloed);
                 }
-                else if( selectedItem.equals(getResources().getString(R.string.test_gck)) )
+                else if( selectedItem.equals(getResources().getString(R.string.test_ecg)) )
                 {
-
+                    Intent intentECG = new Intent(getApplicationContext(), ECGActivity.class);
+                    startActivity(intentECG);
                 }
             }
 

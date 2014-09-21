@@ -15,6 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
 import com.myhealth.application.R;
+import com.myhealth.application.asynctasks.DoctorObject;
+import com.myhealth.application.asynctasks.DoctorTask;
 import com.myhealth.application.config.SessionManager;
 import com.myhealth.application.config.Variables;
 import org.apache.http.HttpResponse;
@@ -35,6 +37,7 @@ public class UrineActivity extends Activity
     private static final int CAMERA_PIC_REQUEST = 1, QR_PIC_REQUEST = 2;
     private String mCurrentPhotoPath;
     private String mFilePath;
+    private int    doctorId;
 
     private TextView mTv2, mTv3, mTv4, mTv5, mTv6, mTv7;
     private EditText mNaam, mKliniek, mTelnr, mEmail, mKlachten;
@@ -170,7 +173,25 @@ public class UrineActivity extends Activity
             Log.d("Content", contents);
 
             Toast.makeText(getApplicationContext(), contents, Toast.LENGTH_SHORT).show();
+
+            doctorId = Integer.valueOf(contents);
+
+            fillDoctorData();
         }
+    }
+
+    private void fillDoctorData()
+    {
+        try
+        {
+            DoctorObject doctor = new DoctorTask(session.getToken()).execute(new String[]{Variables.GETDOCTORURL + doctorId}).get();
+
+            mNaam.setText(doctor.getNaam());
+            mEmail.setText(doctor.getEmail());
+            mTelnr.setText(doctor.getTelnr());
+            mKliniek.setText(doctor.getKliniek());
+        }
+        catch( Exception e ){ e.printStackTrace(); }
     }
 
     private boolean analyzePhoto()
