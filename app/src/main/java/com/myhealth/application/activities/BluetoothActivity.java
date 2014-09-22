@@ -246,51 +246,55 @@ public class BluetoothActivity extends Activity
             mmOutStream = tmpOut;
         }
 
-        public void run() {
+        public void run()
+        {
             long length = 0;
-            try {
+            try
+            {
                 length = mmInStream.available();
-            } catch (Exception e) {
-                e.printStackTrace();
             }
+            catch (Exception e) { e.printStackTrace(); }
             byte[] buffer = new byte[(int) length];  // buffer store for the stream
             int bytes; // bytes returned from read()
             Log.e("BEGIN LOG", "INCOMMING");
             // Keep listening to the InputStream until an exception occurs
-            while (true) {
-                try {
-
+            while (true)
+            {
+                try
+                {
                     // Read from the InputStream
                     bytes = mmInStream.read(buffer);
                     // Send the obtained bytes to the UI activity
-                    mHandler.obtainMessage(1, bytes, -1, buffer)
-                            .sendToTarget();
-
-
-
-                        // prints character
-//                        System.out.print(c);
+                    mHandler.obtainMessage(1, bytes, -1, buffer).sendToTarget();
                     String test = new String(buffer);
-                        Log.d("incomming", test);
-                    Toast.makeText(getApplicationContext(), test, Toast.LENGTH_SHORT).show();
-                } catch (IOException e) {
+                    Log.d("incomming", buffer.toString());
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();
                     break;
                 }
             }
         }
 
         /* Call this from the main activity to send data to the remote device */
-        public void write(byte[] bytes) {
-            try {
+        public void write(byte[] bytes)
+        {
+            try
+            {
                 mmOutStream.write(bytes);
-            } catch (IOException e) { }
+            }
+            catch (IOException e) { }
         }
 
         /* Call this from the main activity to shutdown the connection */
-        public void cancel() {
-            try {
+        public void cancel()
+        {
+            try
+            {
                 mmSocket.close();
-            } catch (IOException e) { }
+            }
+            catch (IOException e) { }
         }
     }
 }

@@ -243,9 +243,7 @@ public class UrineActivity extends Activity
             Toast.makeText(getApplicationContext(), "Status: " + response.getStatusLine(), Toast.LENGTH_SHORT).show();
             //Do something with response...
 
-        } catch (Exception e) {
-            // show error
-        }
+        } catch (Exception e) { e.printStackTrace(); }
     }
 
     private File createImageFile() throws IOException

@@ -13,8 +13,6 @@
     <string name="title_activity_settings">Instellingen</string>
     <string name="title_activity_bluetooth">Actieve bluetooth apparaten</string>
     <string name="title_activity_urine">Urine onderzoek</string>
-    <string name="title_activity_ecg">ECGActivity</string>
-    <string name="title_activity_bloed">BloedActivity</string>
 
     <!-- edit text hints -->
     <string name="field_emailaddress">Email</string>
@@ -53,22 +51,22 @@
     <string name="drawer_close">Sluiten</string>
     <string name="test_urine">Urine test</string>
     <string name="test_bloed">Bloeddruk</string>
-    <string name="test_ecg">ECG</string>
+    <string name="test_gck">ECG</string>
 	<string name="messages">Berichten</string>
+	<string name="rekeningen">Bills</string>
 
     <!-- Drawer values -->
     <string-array name="drawer_values">
         <item>@string/test_urine</item>
         <item>@string/test_bloed</item>
-        <item>@string/test_ecg</item>
+        <item>@string/test_gck</item>
+		<item>@string/messages</item>
+		<item>@string/rekeningen</item>
     </string-array>
 
 	<!-- Test result string -->
 	<string name="negatief_resultaat">Het resultaat was negatief, vul de onderstaande velden in om contact met uw doctor te maken.</string>
 	<string name="positief_resultaat">Het resultaat was positief, u kunt hier weggaan door de knop linksbovenin in te drukken.</string>
-
-    <!-- Toast Messages -->
-    <string name="login_success">U bent succesvol ingelogd</string>
 
 
 </resources>
