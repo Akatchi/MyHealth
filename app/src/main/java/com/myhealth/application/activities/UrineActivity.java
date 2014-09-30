@@ -14,19 +14,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
 import com.myhealth.application.R;
 import com.myhealth.application.asynctasks.DoctorObject;
 import com.myhealth.application.asynctasks.DoctorTask;
 import com.myhealth.application.config.SessionManager;
 import com.myhealth.application.config.Variables;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.InputStreamEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.Header;
+import org.json.JSONObject;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -37,12 +36,15 @@ public class UrineActivity extends Activity
     private static final int CAMERA_PIC_REQUEST = 1, QR_PIC_REQUEST = 2;
     private String mCurrentPhotoPath;
     private String mFilePath;
-    private int    doctorId;
+    private int    doctorId, serverResponseCode;
+    private String serverResponseMessage, serverImageMessage, encryptedImgPath;
 
     private TextView mTv2, mTv3, mTv4, mTv5, mTv6, mTv7;
     private EditText mNaam, mKliniek, mTelnr, mEmail, mKlachten;
     private ImageView mUrinePhoto, mQRPhoto;
     private Button mSend;
+
+//    private ProgressDialog dialog = null;
 
     private SessionManager session;
 
@@ -167,8 +169,6 @@ public class UrineActivity extends Activity
 
         if( requestCode == QR_PIC_REQUEST && resultCode == RESULT_OK )
         {
-            //TODO
-            //QR Code gevonden vul nu de data van de huisarts in in de velden
             String contents = data.getStringExtra("SCAN_RESULT");
             Log.d("Content", contents);
 
@@ -186,10 +186,19 @@ public class UrineActivity extends Activity
         {
             DoctorObject doctor = new DoctorTask(session.getToken()).execute(new String[]{Variables.GETDOCTORURL + doctorId}).get();
 
-            mNaam.setText(doctor.getNaam());
-            mEmail.setText(doctor.getEmail());
-            mTelnr.setText(doctor.getTelnr());
-            mKliniek.setText(doctor.getKliniek());
+            if( doctor.getCode() == Variables.CODE_TOKEN_EXPIRED )
+            {
+                Toast.makeText(getApplicationContext(), R.string.token_expired, Toast.LENGTH_SHORT).show();
+                session.logoutUser();
+            }
+            else
+            {
+
+                mNaam.setText(doctor.getNaam());
+                mEmail.setText(doctor.getEmail());
+                mTelnr.setText(doctor.getTelnr());
+                mKliniek.setText(doctor.getKliniek());
+            }
         }
         catch( Exception e ){ e.printStackTrace(); }
     }
@@ -201,7 +210,7 @@ public class UrineActivity extends Activity
         Random r = new Random();
         int i = r.nextInt(10);
 
-        if( i > 5 ) { return false; }
+        if( i > 9 ) { return false; }
         else        { return true;  }
     }
 
@@ -209,41 +218,61 @@ public class UrineActivity extends Activity
     {
         String klachtenText = "";
 
-        //Haal het doctor id op
         //Haal de user id/email op
         String userEmail = session.getUsername();
+
         //Haal de urine foto op
         File urinePhoto = new File(mFilePath);
-        sendPhotoToServer(urinePhoto);
-        //Haal de klachten op als die er zijn
+
         if( mKlachten.getText().toString().equals(getResources().getString(R.string.field_klachten)) )
         {
             klachtenText = mKlachten.getText().toString();
         }
-        //Stuur de test door naar de webserver
+
+        sendPhotoToServer(urinePhoto, klachtenText);
     }
 
-    private void sendPhotoToServer(File f)
+    private void sendPhotoToServer(File f, String klacht)
     {
-        String url = Variables.URINEPHOTOUPLOADURL;
-
+        final File image = f;
+        AsyncHttpClient client = new AsyncHttpClient();
         try
         {
-            HttpClient httpclient = new DefaultHttpClient();
+            RequestParams params = new RequestParams();
+                params.put("token", session.getToken());
+                params.put("useremail", session.getUsername());
+                params.put("doctorid", String.valueOf(doctorId));
+                params.put("klacht", klacht);
+                params.put("image", image);
 
-            HttpPost httppost = new HttpPost(url);
+            client.post(Variables.URINEPHOTOUPLOADURL, params, new JsonHttpResponseHandler()
+            {
 
-            InputStreamEntity reqEntity = new InputStreamEntity(new FileInputStream(f), -1);
+                @Override
+                public void onStart()
+                {
+                    // called before request is started
+                }
 
-            reqEntity.setContentType("binary/octet-stream");
-            reqEntity.setChunked(true); // Send in multiple parts if needed
-            httppost.setEntity(reqEntity);
-            HttpResponse response = httpclient.execute(httppost);
+                @Override
+                public void onSuccess(int statusCode, Header[] headers, JSONObject json)
+                {
+                    if( statusCode == Variables.CODE_SUCCESS )
+                    {
+                        Toast.makeText(getApplicationContext(), R.string.urinetest_send_success, Toast.LENGTH_SHORT).show();
+                        Intent startMain = new Intent(getApplicationContext(), MainActivity.class);
+                        startActivity(startMain);
+                    }
+                }
 
-            Toast.makeText(getApplicationContext(), "Status: " + response.getStatusLine(), Toast.LENGTH_SHORT).show();
-            //Do something with response...
-
-        } catch (Exception e) { e.printStackTrace(); }
+                @Override
+                public void onRetry(int retryNo)
+                {
+                    // called when request is retried
+                }
+            });
+        }
+        catch( Exception e ){ e.printStackTrace(); }
     }
 
     private File createImageFile() throws IOException

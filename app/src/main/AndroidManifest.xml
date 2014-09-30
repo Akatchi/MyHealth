@@ -14,7 +14,8 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme"
+		android:configChanges="locale|orientation">
         <activity
             android:name=".activities.MainActivity"
             android:label="@string/app_name" >
@@ -48,6 +49,10 @@
         <activity
             android:name=".activities.ECGActivity"
             android:label="@string/title_activity_ecg" >
+        </activity>
+        <activity
+            android:name=".activities.HeartActivity"
+            android:label="@string/title_activity_heart" >
         </activity>
     </application>
 

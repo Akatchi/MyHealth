@@ -35,7 +35,7 @@ public class LoginTask extends AsyncTask<String, String, ResponseObject>
             params.add(new BasicNameValuePair("password", password));
 
         //Haal het json object op
-        JSONObject json = jsonParser.makeHttpRequest(urls[0],"GET", params);
+        JSONObject json = jsonParser.makeHttpRequest(urls[0],"POST", params);
 
         String message = "";
         String token   = "";

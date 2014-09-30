@@ -13,6 +13,9 @@
     <string name="title_activity_settings">Instellingen</string>
     <string name="title_activity_bluetooth">Actieve bluetooth apparaten</string>
     <string name="title_activity_urine">Urine onderzoek</string>
+	<string name="title_activity_bloed">bloed onderzoek</string>
+	<string name="title_activity_ecg">ecg onderzoek</string>
+	<string name="title_activity_heart">hart onderzoek</string>
 
     <!-- edit text hints -->
     <string name="field_emailaddress">Email</string>
@@ -29,11 +32,22 @@
 	<string name="field_drKliniek">Kliniek:</string>
 	<string name="field_drTelnr">Tel nr:</string>
 	<string name="field_drEmail">Email:</string>
+	<string name="field_bdLaag">Bloeddruk laag:</string>
+	<string name="field_bdHoog">Bloeddruk hoog:</string>
+	<string name="field_heartrate">Hartslag:</string>
+	<string name="field_complaint">Klacht: </string>
+	<string name="field_language">Taal: </string>
 
     <!-- button values -->
     <string name="button_login">Login</string>
     <string name="button_save">Opslaan</string>
 	<string name="button_send">Versturen</string>
+	<string name="button_savelocal">Lokaal Opslaan</string>
+	<string name="button_saveonline">Online Opslaan</string>
+	<string name="button_delete">Verwijderen</string>
+	<string name="button_showbloodmeasures">Bezichtig bloed metingen</string>
+	<string name="button_heartmeasure">Bezichtig hart metingen</string>
+	<string name="button_ecgmeasure">Bezichtig ECG metingen</string>
 
     <!-- language strings voor de spinner -->
     <string name="language">Taal</string>
@@ -51,22 +65,45 @@
     <string name="drawer_close">Sluiten</string>
     <string name="test_urine">Urine test</string>
     <string name="test_bloed">Bloeddruk</string>
-    <string name="test_gck">ECG</string>
-	<string name="messages">Berichten</string>
-	<string name="rekeningen">Bills</string>
+    <string name="test_ecg">ECG</string>
+	<string name="test_heartrate">Hartslag meten</string>
+	<string name="logout">Uitloggen</string>
 
     <!-- Drawer values -->
     <string-array name="drawer_values">
         <item>@string/test_urine</item>
         <item>@string/test_bloed</item>
-        <item>@string/test_gck</item>
-		<item>@string/messages</item>
-		<item>@string/rekeningen</item>
+        <item>@string/test_ecg</item>
+		<item>@string/test_heartrate</item>
+		<item>@string/logout</item>
     </string-array>
 
 	<!-- Test result string -->
 	<string name="negatief_resultaat">Het resultaat was negatief, vul de onderstaande velden in om contact met uw doctor te maken.</string>
 	<string name="positief_resultaat">Het resultaat was positief, u kunt hier weggaan door de knop linksbovenin in te drukken.</string>
 
+	<!-- Json results -->
+	<string name="login_success">Succesvol ingelogd!</string>
+	<string name="login_failed">Er ging iets mis met inloggen, controleer uw gebruikersnaam en wachtwoord en probeer het opnieuw!</string>
+	<string name="token_expired">Token verlopen log aub opnieuw in</string>
+	<string name="urinetest_send_success">Urine test succesvol verstuurd.</string>
+	<string name="bloodpressure_onlinesave_success">Bloeddruk meting succesvol op het internet opgeslagen</string>
+	<string name="bloodpressure_localsave_success">Bloeddruk meting succesvol lokaal opgeslagen</string>
+	<string name="heartrate_onlinesave_success">Hartslag succesvol op het internet opgeslagen</string>
+	<string name="heartrate_localsave_success">Hartslag succesvol lokaal opgeslagen</string>
+	<string name="ecg_onlinesave_success">ECG meting is succesvol op het internet opgeslagen</string>
+	<string name="ecg_localsave_success">ECG meting is succesvol lokaal opgeslagen</string>
+	<string name="profile_save_success">Profiel data succesvol opgeslagen</string>
+
+	<!-- Error text -->
+	<string name="delete_measure_succes">Meting succesvol verwijdert</string>
+
+	<!-- Fragment text -->
+	<string name="fragment_blood_measures">Bloed metingen</string>
+	<string name="fragment_heart_measures">Hart metingen</string>
+	<string name="fragment_ecg_measures">ECG metingen</string>
+
+	<!-- succes text -->
+	<string name="save_measure_success">Meting succesvol opgeslagen!</string>
 
 </resources>

@@ -5,58 +5,66 @@
     tools:context="com.myhealth.application.activities.SettingsActivity">
 
 
-    <ImageView
-            android:id="@+id/avatar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:minHeight="128dp"
-            android:minWidth="128dp"
-            android:maxHeight="128dp"
-            android:maxWidth="128dp"
-            android:src="@drawable/ic_action_add_person"/>
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/field_first_name"
+			android:id="@+id/textView"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_marginLeft="9dp"/>
 
-    <TextView
-            android:id="@+id/textUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Username:"
-            android:layout_alignTop="@+id/avatar"
-            android:layout_toRightOf="@+id/avatar"/>
+	<EditText
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:inputType="textPersonName"
+			android:ems="10"
+			android:id="@+id/editText"
+			android:layout_below="@+id/textView"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:layout_marginLeft="9dp"/>
 
-    <EditText
-            android:id="@+id/inputUsername"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:text="Name"
-            android:ems="10"
-            android:enabled="false"
-            android:layout_below="@+id/textUsername"
-            android:layout_toRightOf="@+id/avatar"/>
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/field_last_name"
+			android:id="@+id/textView1"
+			android:layout_below="@id/editText"
+			android:layout_marginLeft="9dp"/>
 
-    <TextView
-            android:id="@+id/textLanguage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Taal:"
-            android:layout_below="@+id/inputUsername"
-            android:layout_toRightOf="@+id/avatar"/>
+	<EditText
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:inputType="textPersonName"
+			android:ems="10"
+			android:id="@+id/editText2"
+			android:layout_below="@+id/textView1"
+			android:layout_marginLeft="9dp"/>
 
-    <Spinner
-            android:id="@+id/spinLanguage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/textLanguage"
-            android:layout_toRightOf="@+id/avatar"/>
+	<TextView
+			android:id="@+id/textLanguage"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/field_language"
+			android:layout_below="@+id/editText2"
+			android:layout_marginLeft="9dp"/>
 
-    <Button android:id="@+id/btnSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/button_save"
-            android:layout_below="@id/spinLanguage"
-            android:layout_marginTop="25dp"
-            android:layout_marginLeft="1dp"
-            android:onClick="saveSettings"/>
+	<Spinner
+			android:id="@+id/spinLanguage"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/textLanguage"
+			android:layout_marginLeft="9dp"/>
+
+	<Button android:id="@+id/btnSave"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/button_save"
+			android:layout_below="@id/spinLanguage"
+			android:layout_marginTop="5dp"
+			android:layout_marginLeft="9dp"
+			android:onClick="saveSettings"/>
 
 </RelativeLayout>

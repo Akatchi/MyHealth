@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:flatui="http://schemas.android.com/apk/res-auto"
+		android:background="@color/background">
+
+	<com.cengalabs.flatui.views.FlatTextView
+			android:textColor="@color/wit"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:text="Small Text"
+			android:id="@+id/field_date"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentRight="true"
+			android:layout_alignParentEnd="true"/>
+
+	<com.cengalabs.flatui.views.FlatTextView
+			android:textColor="@color/wit"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:text="Small Text"
+			android:id="@+id/field_bdLaag"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"/>
+
+	<com.cengalabs.flatui.views.FlatTextView
+			android:textColor="@color/wit"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:text="Small Text"
+			android:id="@+id/field_bdHoog"
+			android:layout_below="@+id/field_bdLaag"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"/>
+
+	<com.cengalabs.flatui.views.FlatTextView
+			android:textColor="@color/wit"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:text="Small Text"
+			android:id="@+id/field_hartslag"
+			android:layout_below="@+id/field_bdHoog"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"/>
+
+	<com.cengalabs.flatui.views.FlatButton
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/button_delete"
+			android:id="@+id/button_delete"
+			android:layout_toStartOf="@+id/field_date" android:layout_below="@+id/field_klacten"
+			android:layout_alignRight="@+id/field_date" android:layout_alignEnd="@+id/field_date"
+			android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+
+	<com.cengalabs.flatui.views.FlatTextView
+			android:textColor="@color/wit"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:textAppearance="?android:attr/textAppearanceSmall"
+			android:text="Small Text"
+			android:id="@+id/field_klacten"
+			android:layout_toRightOf="@+id/field_bdHoog" android:layout_below="@+id/field_hartslag"
+			android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+</RelativeLayout>

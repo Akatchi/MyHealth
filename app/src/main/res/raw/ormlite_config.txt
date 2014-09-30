@@ -1,0 +1,79 @@
+#
+# generated on 2014/09/23 01:10:39
+#
+# --table-start--
+dataClass=com.myhealth.application.database.BloodMeasure
+tableName=bloodmeasure
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=bloodPressureHigh
+# --field-end--
+# --field-start--
+fieldName=bloodPressureLow
+# --field-end--
+# --field-start--
+fieldName=heartrate
+# --field-end--
+# --field-start--
+fieldName=measureDate
+# --field-end--
+# --field-start--
+fieldName=username
+# --field-end--
+# --field-start--
+fieldName=klachten
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.myhealth.application.database.HeartMeasure
+tableName=heartmeasure
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=heartrate
+# --field-end--
+# --field-start--
+fieldName=measureDate
+# --field-end--
+# --field-start--
+fieldName=username
+# --field-end--
+# --field-start--
+fieldName=klachten
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=com.myhealth.application.database.ECGMeasure
+tableName=ecgmeasure
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=measureDate
+# --field-end--
+# --field-start--
+fieldName=ECGdata
+dataPersister=SERIALIZABLE
+# --field-end--
+# --field-start--
+fieldName=username
+# --field-end--
+# --field-start--
+fieldName=klachten
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

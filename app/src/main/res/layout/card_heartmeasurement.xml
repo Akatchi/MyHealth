@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+	<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/imageView3"
+			android:src="@drawable/ic_heart13"
+			/>
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="85"
+			android:id="@+id/card_heartrate"
+			android:layout_marginTop="10dp"
+			android:layout_toRightOf="@+id/imageView3"/>
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="Klachten"
+			android:id="@+id/card_klachten"
+			android:layout_below="@+id/imageView3"
+			android:layout_marginLeft="9dp"/>
+
+</RelativeLayout>

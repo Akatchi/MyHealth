@@ -29,6 +29,9 @@ public class LoginActivity extends Activity
         //Initializeer de EditTexts die gebruikt worden om de login gegevens in te vullen
         mUsername = (EditText) findViewById(R.id.field_emailaddress);
         mPassword = (EditText) findViewById(R.id.field_password);
+
+        mUsername.setText("Test@test.nl");
+        mPassword.setText("test");
     }
 
     //Functie zit in een onClick van de button in de XML layout
@@ -63,8 +66,7 @@ public class LoginActivity extends Activity
                 }
                 else
                 {
-                    //Todo: Handel verkeerde credentials af
-                    Toast.makeText(getApplicationContext(), "sss", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.login_failed, Toast.LENGTH_SHORT).show();
                 }
             }
             catch(Exception e){ e.printStackTrace(); }

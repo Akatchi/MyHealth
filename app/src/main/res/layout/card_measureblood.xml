@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:flatui="http://schemas.android.com/apk/res-auto"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+	<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/imageView3"
+			android:src="@drawable/ic_heart13"
+			/>
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="85"
+			android:id="@+id/card_heartrate"
+			android:layout_marginTop="10dp"
+			android:layout_toRightOf="@+id/imageView3"/>
+
+	<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/image_bdHoog"
+			android:layout_below="@id/imageView3"
+			android:src="@drawable/ic_bloodhigh"
+			/>
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="85"
+			android:id="@+id/card_bloodHigh"
+			android:layout_marginTop="10dp"
+			android:layout_below="@id/imageView3"
+			android:layout_toRightOf="@+id/image_bdHoog"/>
+
+	<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:id="@+id/image_bdLow"
+			android:layout_below="@id/image_bdHoog"
+			android:src="@drawable/ic_bloodlow"
+			/>
+	<TextView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="85"
+			android:id="@+id/card_bloodLow"
+			android:layout_marginTop="10dp"
+			android:layout_below="@id/image_bdHoog"
+			android:layout_toRightOf="@+id/image_bdLow"/>
+
+	<EditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="@string/field_klachten"
+			android:inputType="textMultiLine"
+			android:ems="10"
+			android:id="@+id/card_klachten"
+			android:layout_below="@+id/image_bdLow"
+			android:layout_marginLeft="9dp"/>
+
+	<com.cengalabs.flatui.views.FlatButton
+			flatui:fl_theme="@array/deep"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/card_klachten"
+			android:id="@+id/save_online"
+			android:text="@string/button_saveonline"
+			android:onClick="saveOnline"
+			android:layout_marginTop="9dp"
+			android:layout_marginLeft="9dp"
+			android:layout_marginBottom="9dp"/>
+
+	<com.cengalabs.flatui.views.FlatButton
+			flatui:fl_theme="@array/deep"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/button_savelocal"
+			android:layout_below="@id/card_klachten"
+			android:onClick="saveLocal"
+			android:layout_alignParentRight="true"
+			android:layout_marginTop="9dp"
+			android:layout_marginRight="9dp"
+			android:layout_marginBottom="9dp"/>
+
+</RelativeLayout>

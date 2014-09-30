@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * Created by Akatchi on 13-9-2014.
  */
-public class DoctorTask extends AsyncTask<String, String, DoctorObject>
+public class  DoctorTask extends AsyncTask<String, String, DoctorObject>
 {
     private String      token;
     private JSONParser  jsonParser = new JSONParser();
@@ -51,9 +51,9 @@ public class DoctorTask extends AsyncTask<String, String, DoctorObject>
             email               = temp.getString("email");
             telnr               = temp.getString("telephone_number");
 
-            JSONArray kliniek   = temp.getJSONArray("clinic");
-            temp                = kliniek.getJSONObject(0);
-            klinieknaam         = temp.getString("name");
+            JSONObject kliniek   = temp.getJSONObject("clinic");
+//            temp                = kliniek.getJSONObject(0);
+            klinieknaam         = kliniek.getString("name");
 
             code    = json.getInt("status");
 

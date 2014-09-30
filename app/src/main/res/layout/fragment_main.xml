@@ -1,6 +1,42 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".MainActivity">
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+		android:background="@color/background">
+
+	<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/button_showbloodmeasures"
+			android:id="@+id/button_bloodmeasure"
+			android:layout_alignParentTop="true"
+			android:layout_alignParentLeft="true"
+			android:layout_alignParentStart="true"
+			android:onClick="showBloodMeasurements"/>
+	<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="New Button"
+			android:id="@+id/button_heartmeasure"
+			android:layout_alignBottom="@+id/button_bloodmeasure"
+			android:layout_toRightOf="@+id/button_bloodmeasure"
+			android:layout_toEndOf="@+id/button_bloodmeasure"/>
+
+	<Button
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="New Button"
+			android:id="@+id/button_ecgmeasure"
+			android:layout_alignBottom="@+id/button_heartmeasure"
+			android:layout_toRightOf="@+id/button_heartmeasure"
+			android:layout_toEndOf="@+id/button_heartmeasure"/>
+
+	<ListView
+			android:id="@+id/measureList"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/button_heartmeasure"/>
+
 </RelativeLayout>

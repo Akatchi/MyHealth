@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+		xmlns:android="http://schemas.android.com/apk/res/android"
+		xmlns:flatui="http://schemas.android.com/apk/res-auto"
+		android:orientation="vertical"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+
+	<LinearLayout
+			android:id="@+id/graph"
+			android:orientation="horizontal"
+			android:layout_width="wrap_content"
+			android:layout_margin="5dp"
+			android:layout_height="250dp"/>
+
+	<EditText
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:hint="@string/field_klachten"
+			android:inputType="textMultiLine"
+			android:ems="10"
+			android:id="@+id/card_klachten"
+			android:layout_below="@+id/graph"
+			android:layout_marginLeft="9dp"/>
+
+	<com.cengalabs.flatui.views.FlatButton
+			flatui:fl_theme="@array/deep"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_below="@id/card_klachten"
+			android:id="@+id/save_online"
+			android:text="@string/button_saveonline"
+			android:onClick="saveOnline"
+			android:layout_marginTop="9dp"
+			android:layout_marginLeft="9dp"
+			android:layout_marginBottom="9dp"/>
+
+	<com.cengalabs.flatui.views.FlatButton
+			flatui:fl_theme="@array/deep"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:text="@string/button_savelocal"
+			android:layout_below="@id/card_klachten"
+			android:onClick="saveLocal"
+			android:layout_alignParentRight="true"
+			android:layout_marginTop="9dp"
+			android:layout_marginRight="9dp"
+			android:layout_marginBottom="9dp"/>
+
+</RelativeLayout>

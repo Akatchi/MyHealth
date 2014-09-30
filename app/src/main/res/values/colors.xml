@@ -4,4 +4,18 @@
     <color name="bg_gradient_start">#b21331</color>
     <color name="bg_gradient_end">#820d2a</color>
     <color name="bg_button_login">#380813</color>
+
+	<color name="primary">#87C555</color>
+	<color name="dark">#11a000</color>
+	<color name="darker">#096000</color>
+	<color name="light">#49CD3B</color>
+	<color name="wit">#ffffff</color>
+	<color name="background">#2b3e50</color>
+
+	<integer-array name="myHealth">
+		<item>@color/darker</item>
+		<item>@color/dark</item>
+		<item>@color/primary</item>
+		<item>@color/light</item>
+	</integer-array>
 </resources>

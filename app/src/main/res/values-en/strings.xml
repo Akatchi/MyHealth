@@ -13,8 +13,12 @@
     <string name="title_activity_settings">Settings</string>
     <string name="title_activity_bluetooth">Active bluetooth devices</string>
     <string name="title_activity_urine">Urine test</string>
+	<string name="title_activity_bloed">blood research</string>
+	<string name="title_activity_ecg">ecg research</string>
+	<string name="title_activity_heart">Heart research</string>
 
-    <!-- edit text hints -->
+
+	<!-- edit text hints -->
     <string name="field_emailaddress">Email</string>
     <string name="field_password">Password</string>
     <string name="field_first_name">First name</string>
@@ -29,11 +33,22 @@
 	<string name="field_drKliniek">Clinic:</string>
 	<string name="field_drTelnr">Phone:</string>
 	<string name="field_drEmail">Email:</string>
+	<string name="field_bdLaag">Bloodpressure low:</string>
+	<string name="field_bdHoog">Bloodpressure high:</string>
+	<string name="field_heartrate">Heartrate:</string>
+	<string name="field_complaint">Complaint: </string>
+	<string name="field_language">Language: </string>
 
     <!-- button values -->
     <string name="button_login">Login</string>
     <string name="button_save">Save</string>
 	<string name="button_send">Send</string>
+	<string name="button_savelocal">Save Local</string>
+	<string name="button_saveonline">Save Online</string>
+	<string name="button_delete">Delete</string>
+	<string name="button_showbloodmeasures">Show blood measures</string>
+	<string name="button_heartmeasure">Show heart measures</string>
+	<string name="button_ecgmeasure">Show ECG measures</string>
 
     <!-- language strings voor de spinner -->
     <string name="language">Language</string>
@@ -52,22 +67,45 @@
     <string name="test_urine">Urine test</string>
     <string name="test_bloed">Bloodpressure</string>
     <string name="test_ecg">ECG scan</string>
-	<string name="messages">Messages</string>
-	<string name="rekeningen">Bills</string>
+	<string name="test_heartrate">Heartrate measurement</string>
+	<string name="logout">Logout</string>
+
 
     <!-- Drawer values -->
     <string-array name="drawer_values">
         <item>@string/test_urine</item>
         <item>@string/test_bloed</item>
         <item>@string/test_ecg</item>
-		<item>@string/messages</item>
-		<item>@string/rekeningen</item>
-    </string-array>
+		<item>@string/test_heartrate</item>
+		<item>@string/logout</item>
+	</string-array>
 
 	<!-- Test result string -->
 	<string name="negatief_resultaat">The result was negative, fill in the form below to contact your doctor.</string>
 	<string name="positief_resultaat">The result was positive, you can go back to the previous page by clicking the button in the top left corner.</string>
 
+	<!-- Json results -->
+	<string name="login_success">You succesfully logged in!</string>
+	<string name="login_failed">There was an error while trying to log you in, make sure that your password and email are correct.</string>
+	<string name="token_expired">Token expired please login again</string>
+	<string name="urinetest_send_success">Urine test successfully sent.</string>
+	<string name="bloodpressure_onlinesave_success">Bloodpressure measurement successfully saved online</string>
+	<string name="bloodpressure_localsave_success">Bloodpressure measurement successfully saved on the device</string>
+	<string name="heartrate_onlinesave_success">Hearthrate measurement successfully saved online</string>
+	<string name="heartrate_localsave_success">Hearthrate successfully saved on the device</string>
+	<string name="ecg_onlinesave_success">ECG measurement successfully saved online</string>
+	<string name="ecg_localsave_success">ECG measurement successfully saved on the device</string>
+	<string name="profile_save_success">Profile data succeessfully saved</string>
 
+	<!-- Error text -->
+	<string name="delete_measure_succes">Measure successfully deleted</string>
+
+	<!-- Fragment text -->
+	<string name="fragment_blood_measures">Bloodmeasures</string>
+	<string name="fragment_heart_measures">Heartmeasures</string>
+	<string name="fragment_ecg_measures">ECGmeasures</string>
+
+	<!-- succes text -->
+	<string name="save_measure_success">Measurement successfully saved!</string>
 
 </resources>

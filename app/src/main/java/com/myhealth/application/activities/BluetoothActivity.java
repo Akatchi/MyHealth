@@ -21,11 +21,10 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 import com.myhealth.application.R;
+import com.myhealth.application.config.HealthObject;
 import com.myhealth.application.config.Variables;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.UUID;
 
@@ -222,13 +221,15 @@ public class BluetoothActivity extends Activity
         }
     }
 
-    private class ConnectedThread extends Thread {
+    private class ConnectedThread extends Thread
+    {
         private final BluetoothSocket mmSocket;
         private final InputStream mmInStream;
         private final OutputStream mmOutStream;
         private final Handler mHandler;
 
-        public ConnectedThread(BluetoothSocket socket, Handler handler) {
+        public ConnectedThread(BluetoothSocket socket, Handler handler)
+        {
             mmSocket = socket;
             mHandler = handler;
 
@@ -237,7 +238,8 @@ public class BluetoothActivity extends Activity
 
             // Get the input and output streams, using temp objects because
             // member streams are final
-            try {
+            try
+            {
                 tmpIn = socket.getInputStream();
                 tmpOut = socket.getOutputStream();
             } catch (IOException e) { }
@@ -248,34 +250,72 @@ public class BluetoothActivity extends Activity
 
         public void run()
         {
-            long length = 0;
-            try
-            {
-                length = mmInStream.available();
-            }
-            catch (Exception e) { e.printStackTrace(); }
-            byte[] buffer = new byte[(int) length];  // buffer store for the stream
-            int bytes; // bytes returned from read()
-            Log.e("BEGIN LOG", "INCOMMING");
-            // Keep listening to the InputStream until an exception occurs
+//            byte[] buffer =  new byte[1024];
+            int bytes = 0;
+
             while (true)
             {
                 try
                 {
-                    // Read from the InputStream
+                    //Read from the InputStream
+                    byte[] buffer = new byte[21];
                     bytes = mmInStream.read(buffer);
-                    // Send the obtained bytes to the UI activity
-                    mHandler.obtainMessage(1, bytes, -1, buffer).sendToTarget();
-                    String test = new String(buffer);
-                    Log.d("incomming", buffer.toString());
-                }
-                catch (IOException e)
+                    // Send the obtained bytes to the UI Activity
+
+                    int value;
+
+//                    Log.d("INPUT", "Type: " + type + " Value: " + value);
+                    switch( buffer[0] )
+                    {
+                        case 0x60: // ECG
+                            try
+                            {
+                                value = new Integer(buffer[1]);
+                                int[] ECGData = new int[20];
+                                for( int i = 0; i < 20; i++ )
+                                {
+                                    ECGData[i] = new Integer(buffer[i + 1]);
+                                }
+                                Log.d("Typ", "ECG - " + ECGData[19] + " " + value);
+                                HealthObject.getInstance().setECGData(ECGData);
+                                break;
+                            }
+                            catch( Exception e )
+                            {
+                                e.printStackTrace();
+                                break;
+                            }
+                        case 0x61: // Hartslag
+                            value = new Integer(buffer[1]);
+                            if( value < 0 ) { value = value * -1; } //Om negatieve waardes eruit te filteren
+                            Log.d("Typ", "Hartslag - " + value);
+                            HealthObject.getInstance().setHeartRate(value);
+                            break;
+                        case 0x62: // Bloeddruk
+                            int bdHoog = new Integer(buffer[1]);
+                            if( bdHoog < 0 ){ bdHoog = bdHoog * -1; }
+                            int bdLaag = new Integer(buffer[2]);
+                            if( bdLaag < 0 ){ bdLaag = bdLaag * -1; }
+                                                         //BD hoog                          //BD Laag
+                            Log.d("Typ", "Bloeddruk - " + bdHoog + " - " + bdLaag );
+                            HealthObject.getInstance().setBloodPressureHigh(bdHoog);
+                            HealthObject.getInstance().setBloodPressureLow(bdLaag);
+                            break;
+
+                    }
+                    //read the data from socket stream
+
+                    // Send the obtained bytes to the UI Activity
+                } catch (IOException e)
                 {
+                    //an exception here marks connection loss
+                    //send message to UI Activity
                     e.printStackTrace();
                     break;
                 }
             }
         }
+
 
         /* Call this from the main activity to send data to the remote device */
         public void write(byte[] bytes)

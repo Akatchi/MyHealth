@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
-
 import com.myhealth.application.activities.LoginActivity;
 
 /**
@@ -21,10 +20,11 @@ public class SessionManager
     /**
      * The keys for the shared preferences array
      */
-    private static final String PREF_NAME = "MyHealth";
-    private static final String IS_LOGIN  = "IsLoggedIn";
-    private static final String USERNAME  = "Username";
-    private static final String TOKEN     = "Token";
+    private static final String PREF_NAME   = "MyHealth";
+    private static final String IS_LOGIN    = "IsLoggedIn";
+    private static final String USERNAME    = "Username";
+    private static final String TOKEN       = "Token";
+    private static final String LANGUAGE    = "Language";
 
     /**
      * The constructor for the session manager,
@@ -89,12 +89,20 @@ public class SessionManager
         _context.startActivity(i);
     }
 
+    public void setLanguage(String lang)
+    {
+        editor = pref.edit();
+        editor.putString(LANGUAGE, lang);
+        editor.commit();
+    }
+
     /**
      * getName, gets the username from the shared preferences.
      * @return String username
      */
     public String getUsername() 		{ return pref.getString(USERNAME, null); }
     public String getToken()            { return pref.getString(TOKEN, null); }
+    public String getLanguage()         { return pref.getString(LANGUAGE, "Nederlands"); }
 
     /**
      * isLoggedIn, gets the log in boolean for the user.
