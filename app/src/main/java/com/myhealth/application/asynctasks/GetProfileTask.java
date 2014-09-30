@@ -15,13 +15,12 @@ import java.util.List;
  */
 public class GetProfileTask extends AsyncTask<String, String, UserObject>
 {
-    private String      token, email, firstname, lastname;
+    private String      token, firstname, lastname;
     private JSONParser  jsonParser = new JSONParser();
 
-    public GetProfileTask(String token, String email)
+    public GetProfileTask(String token)
     {
         this.token      = token;
-        this.email      = email;
     }
 
     @Override
@@ -30,10 +29,9 @@ public class GetProfileTask extends AsyncTask<String, String, UserObject>
         //Vul de parameters die doorgestuurd moeten worden naar de json pagina
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("token",      token));
-        params.add(new BasicNameValuePair("email",      email));
 
         //Haal het json object op
-        JSONObject json = jsonParser.makeHttpRequest(urls[0],"POST", params);
+        JSONObject json = jsonParser.makeHttpRequest(urls[0],"GET", params);
 
         int    code    = 0;
         UserObject toReturn = null;
@@ -43,8 +41,11 @@ public class GetProfileTask extends AsyncTask<String, String, UserObject>
             Log.d("json", json.getString("status") + ":: " + json.toString());
             //Haal de message en code op van de JSON return page
             code        = json.getInt("status");
-            firstname   = json.getString("firstname");
-            lastname    = json.getString("lastname");
+
+            JSONObject result = json.getJSONObject("result");
+
+            firstname   = result.getString("first_name");
+            lastname    = result.getString("last_name");
 
             toReturn = new UserObject(firstname, lastname, code);
         }

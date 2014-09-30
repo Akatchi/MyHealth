@@ -16,8 +16,8 @@ public class Variables
     public static final String SENDBLOODTEST        = "http://myhealth.santjuh.nl/app/bloodpressure/save";
     public static final String SENDHEARTRATE        = "http://myhealth.santjuh.nl/app/heartrate/save";
     public static final String SENDECGDATA          = "http://myhealth.santjuh.nl/app/ecg/save";
-    public static final String GETPROFILEDATA       = "";
-    public static final String SAVEPROFILEDATA      = "";
+    public static final String GETPROFILEDATA       = "http://myhealth.santjuh.nl/user";
+    public static final String SAVEPROFILEDATA      = "http://myhealth.santjuh.nl/user/profile/save";
 
     /**
      * various codes for the application.

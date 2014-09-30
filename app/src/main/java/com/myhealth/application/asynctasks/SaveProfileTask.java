@@ -34,8 +34,8 @@ public class SaveProfileTask extends AsyncTask<String, String, Integer>
         List<NameValuePair> params = new ArrayList<NameValuePair>();
         params.add(new BasicNameValuePair("token",      token));
         params.add(new BasicNameValuePair("email",      email));
-        params.add(new BasicNameValuePair("firstname",  firstname));
-        params.add(new BasicNameValuePair("lastname",   lastname));
+        params.add(new BasicNameValuePair("first_name",  firstname));
+        params.add(new BasicNameValuePair("last_name",   lastname));
 
         //Haal het json object op
         JSONObject json = jsonParser.makeHttpRequest(urls[0],"POST", params);

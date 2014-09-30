@@ -47,7 +47,7 @@ public class SettingsActivity extends Activity
         try
         {
             //Profiel data ophalen en invullen in de textvelden 
-            UserObject userData = new GetProfileTask(session.getToken(), session.getUsername()).execute(new String[]{Variables.GETPROFILEDATA}).get();
+            UserObject userData = new GetProfileTask(session.getToken()).execute(new String[]{Variables.GETPROFILEDATA + "/" + session.getUsername()}).get();
 
             if( userData.getCode() == Variables.CODE_SUCCESS )
             {
