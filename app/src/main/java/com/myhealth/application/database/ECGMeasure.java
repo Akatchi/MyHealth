@@ -3,6 +3,8 @@ package com.myhealth.application.database;
 import com.j256.ormlite.field.DataType;
 import com.j256.ormlite.field.DatabaseField;
 
+import java.util.Arrays;
+
 /**
  * Created by Akatchi on 23-9-2014.
  */
@@ -76,5 +78,18 @@ public class ECGMeasure
     public void setKlachten(String klachten)
     {
         this.klachten = klachten;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "ECGMeasure{" +
+                "id=" + id +
+                ", heartrate=" + Arrays.toString(ECGdata) +
+                ", measureDate=" + measureDate +
+                ", username='" + username + '\'' +
+                ", klachten='" + klachten + '\'' +
+                '}';
+
     }
 }

@@ -27,7 +27,6 @@ import it.gmariotti.cardslib.library.view.CardView;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
 public class HeartActivity extends Activity
 {
@@ -56,8 +55,8 @@ public class HeartActivity extends Activity
 //        mKlachten = (EditText) findViewById(R.id.field_klachten);
 //        mMeasurements = (ListView) findViewById(R.id.measureList);
 
-        Random r = new Random();
-        HealthObject.getInstance().setHeartRate(r.nextInt(100));
+//        Random r = new Random();
+//        HealthObject.getInstance().setHeartRate(r.nextInt(100));
 
 //        mHartslag.setText(getResources().getString(R.string.field_heartrate)    + " " + HealthObject.getInstance().getHeartRate());
 

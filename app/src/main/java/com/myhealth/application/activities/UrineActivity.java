@@ -230,6 +230,7 @@ public class UrineActivity extends Activity
         }
 
         sendPhotoToServer(urinePhoto, klachtenText);
+
     }
 
     private void sendPhotoToServer(File f, String klacht)
@@ -239,9 +240,9 @@ public class UrineActivity extends Activity
         try
         {
             RequestParams params = new RequestParams();
-                params.put("token", session.getToken());
+//                params.put("token", session.getToken());
                 params.put("useremail", session.getUsername());
-                params.put("doctorid", String.valueOf(doctorId));
+                params.put("docterid", String.valueOf(doctorId));
                 params.put("klacht", klacht);
                 params.put("image", image);
 
@@ -252,6 +253,7 @@ public class UrineActivity extends Activity
                 public void onStart()
                 {
                     // called before request is started
+                    Log.d("sending", "sending");
                 }
 
                 @Override
@@ -272,7 +274,7 @@ public class UrineActivity extends Activity
                 }
             });
         }
-        catch( Exception e ){ e.printStackTrace(); }
+        catch( Exception e ){ e.printStackTrace(); Log.d("error", e.toString()); }
     }
 
     private File createImageFile() throws IOException

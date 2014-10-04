@@ -26,7 +26,6 @@ import it.gmariotti.cardslib.library.view.CardView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Random;
 
 public class BloedActivity extends Activity
 {
@@ -57,10 +56,10 @@ public class BloedActivity extends Activity
 //
 //        mKlachten   = (EditText) findViewById(R.id.editText);
 //
-        Random r = new Random();
-        HealthObject.getInstance().setBloodPressureLow(r.nextInt(50));
-        HealthObject.getInstance().setBloodPressureHigh(r.nextInt(50) + 50);
-        HealthObject.getInstance().setHeartRate(r.nextInt(100));
+//        Random r = new Random();
+//        HealthObject.getInstance().setBloodPressureLow(r.nextInt(50));
+//        HealthObject.getInstance().setBloodPressureHigh(r.nextInt(50) + 50);
+//        HealthObject.getInstance().setHeartRate(r.nextInt(100));
 //
 //        mBDLaag.setText(getResources().getString(R.string.field_bdLaag)         + " " + HealthObject.getInstance().getBloodPressureLow());
 //        mBDHoog.setText(getResources().getString(R.string.field_bdHoog)         + " " + HealthObject.getInstance().getBloodPressureHigh());

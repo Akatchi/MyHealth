@@ -76,4 +76,16 @@ public class HeartMeasure
     {
         this.klachten = klachten;
     }
+
+    @Override
+    public String toString()
+    {
+        return "HeartMessure{" +
+                "id=" + id +
+                ", heartrate=" + heartrate +
+                ", measureDate=" + measureDate +
+                ", username='" + username + '\'' +
+                ", klachten='" + klachten + '\'' +
+                '}';
+    }
 }

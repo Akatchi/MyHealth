@@ -14,6 +14,7 @@ import com.j256.ormlite.dao.Dao;
 import com.myhealth.application.R;
 import com.myhealth.application.asynctasks.SaveECGTask;
 import com.myhealth.application.cards.ECGMeasureCard;
+import com.myhealth.application.config.HealthObject;
 import com.myhealth.application.config.SessionManager;
 import com.myhealth.application.config.Variables;
 import com.myhealth.application.database.DatabaseHelper;
@@ -24,7 +25,6 @@ import it.gmariotti.cardslib.library.view.CardView;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.Random;
 
 public class ECGActivity extends Activity
 {
@@ -49,14 +49,14 @@ public class ECGActivity extends Activity
 
 //        mKlachten = (EditText) findViewById(R.id.field_klachten);
 
-//        ECGdata = HealthObject.getInstance().getECGData();
+        ECGdata = HealthObject.getInstance().getECGData();
 
-        ECGdata = new int[20];
-        Random r = new Random();
-        for( int j = 0; j < ECGdata.length; j++ )
-        {
-            ECGdata[j] = r.nextInt(100);
-        }
+//        ECGdata = new int[20];
+//        Random r = new Random();
+//        for( int j = 0; j < ECGdata.length; j++ )
+//        {
+//            ECGdata[j] = r.nextInt(100);
+//        }
 
         card = new ECGMeasureCard(getApplicationContext());
             CardHeader header = new CardHeader(getApplicationContext());
